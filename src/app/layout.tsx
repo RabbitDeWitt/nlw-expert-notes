@@ -20,7 +20,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="@/favicon.ico" type="image/x-ico" />
       </head>
-      <body className={`${inter.className} bg-slate-900 text-slate-50 antialiased`}>{children}</body>
+      <body className={`${inter.className} bg-slate-900 text-slate-50 antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
