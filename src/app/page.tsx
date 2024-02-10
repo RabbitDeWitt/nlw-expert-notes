@@ -2,6 +2,21 @@ import { NlwExpertLogo } from "./assets/NlwExpertLogo";
 import { NewNoteCard, NoteCard } from "./components";
 
 export default function Home() {
+  const notes = [
+    {
+      date: new Date(),
+      content: "Nota 1"
+    },
+    {
+      date: new Date(),
+      content: "Nota 2"
+    },
+    {
+      date: new Date(),
+      content: "Nota 3"
+    },
+  ]
+
   return (
     <main className="mx-auto max-w-6xl my-12 space-y-6">
       <NlwExpertLogo />
@@ -17,8 +32,14 @@ export default function Home() {
 
       <div className="grid grid-cols-3 gap-6 auto-rows-[250px]">
         <NewNoteCard />
-        <NoteCard />
-        <NoteCard />
+
+        {notes.map((note, i) => (
+          <NoteCard
+            key={i}
+            note={note}
+          />
+        ))}
+
       </div>
     </main >
   );
