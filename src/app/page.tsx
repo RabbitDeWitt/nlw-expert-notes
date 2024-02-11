@@ -35,13 +35,21 @@ export default function Home() {
     localStorage.setItem('notes', JSON.stringify(notesArray))
   }
 
+  const onNoteDelete = (id: string) => {
+    const notesArray = notes.filter(note => note.id !== id)
+
+    setNotes(notesArray)
+    localStorage.setItem('notes', JSON.stringify(notesArray))
+  }
+
+
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value
     setSearch(query)
   }
 
   return (
-    <main className="mx-auto max-w-6xl my-12 space-y-6">
+    <main className="mx-auto max-w-6xl my-12 space-y-6 px-5 lg:px-0">
       <NlwExpertLogo />
       <form className="w-full">
         <input
@@ -55,7 +63,7 @@ export default function Home() {
 
       <div className="h-px bg-slate-700" />
 
-      <div className="grid grid-cols-3 gap-6 auto-rows-[250px]">
+      <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[250px]">
         <NewNoteCard
           onNoteCreated={onNoteCreated}
         />
@@ -64,6 +72,7 @@ export default function Home() {
           <NoteCard
             key={i}
             note={note}
+            onNoteDelete={onNoteDelete}
           />
         ))}
 
