@@ -13,6 +13,7 @@ type Props = {
 
 const NoteCard = ({ note }: Props) => {
   const { date, content } = note
+
   return (
     <Dialog.Root>
       <Dialog.Trigger className='rounded-md text-left flex flex-col gap-3 bg-slate-800 p-5 overflow-hidden relative hover:ring-2 hover:ring-slate-600 focus-visible:ring-2 focus-visible:ring-lime-400 outline-none'>

@@ -1,5 +1,6 @@
 import { NlwExpertLogo } from "./assets/NlwExpertLogo";
 import { NewNoteCard, NoteCard } from "./components";
+import { Toaster } from 'sonner'
 
 export default function Home() {
   const notes = [
@@ -41,6 +42,7 @@ export default function Home() {
         ))}
 
       </div>
+      <Toaster richColors />
     </main >
   );
 }
